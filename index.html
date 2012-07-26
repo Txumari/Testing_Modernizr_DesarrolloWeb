@@ -1,0 +1,50 @@
+<!doctype html>
+
+
+<!-- si no carga el javascript esta clase no se modifica
+	porque modernizr no se ejecuta
+
+-->
+
+<html class="no-js">
+<head>
+	<title>Testing Modernizer</title>
+	<script src="modernizr.js"></script>
+
+	<!--
+
+		Al crear la clase no-js podemos generar estilos para todos los navegadores que no tiene JavaScript añadiendo esta clase a la regla css esta clase.
+
+		Si tiene JS no se activan estos estilos porque el propio JavaScript (Modernizer) elimina la clase del elemento html
+
+	 -->
+
+	<style type="text/css">
+		header{
+			background-color: orange;
+		}
+
+
+
+		#avisojs{
+			display: none;
+		}
+
+
+		.no-js #avisojs{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		Cabecera
+	</header><!-- /header -->
+
+	<div id="avisojs">
+		Hola, tu navegador no tiene JavaScript
+	</div>
+
+
+</body>
+</html>
