@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Detectar Text Shadow</title>
+
+	<link rel="stylesheet" href="jquery.textshadow.css">
+	<script src="modernizr.js"></script>
+	<script src="jquery-1.7.2.min.js"></script>
+
+<script>
+
+Modernizr.load({
+  test: Modernizr.textshadow,
+  nope: ['jquery.textshadow.js', 'jquery.textshadow.css'],
+  complete : function () {
+      // Run this after everything in this group has downloaded
+      // and executed, as well everything in all previous groups
+
+      	if(!Modernizr.textshadow){
+      		$("header").textshadow();
+      	}
+      }
+});
+
+</script>
+
+<style type="text/css" media="screen">
+	header{
+		font-size: 30px;
+			text-shadow: 5px 5px #f99, 2px 2px #f99;
+
+			/* Doble Sombra */
+	}
+</style>
+
+</head>
+<body>
+	<header>
+		Mi prueba de text shadow en explorer
+	</header><!-- /header -->
+
+</body>
+</html>
