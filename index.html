@@ -20,11 +20,48 @@
 	 -->
 
 	<style type="text/css">
+
+/**
+*
+* Estilo para cuando se acepta border-radius o no.
+* Si no se acepta Javascript este sera el estilo para todos??
+*
+*/
+
+
 		header{
+			font-size: 40px;
 			background-color: orange;
+			height: 50px;
+			width: 190px;
+			padding: 5px;
+			text-shadow: 0.1em 0.1em white;
+			border-radius: 5px;
+			/*
+			* Para los que no tienen border radius
+			* ponemos un borde solido rojo
+			*/
+			border: 1px solid red;
+
 		}
+/**
+*
+* Estilo concreto para cuando se acepta border-radius y se permite JavaScript
+* Estilo concreto para cuando se acepta border-radius y se permite JavaScript
+*
+*/
 
+		.borderradius header {
 
+		/*
+		* Para los que no tienen border radius
+		* ponemos un borde solido rojo
+		* Sabemos que tienen border-radius porque si tiene modernizr nos añade la clase borderradius
+		Sabemos que no tienen border-radius porque si no tiene modernizr no nos añade la clase borderradius y nos añade las clase no-borderradius
+		*/
+		border-radius: none;
+
+		}
 
 		#avisojs{
 			display: none;
@@ -47,4 +84,26 @@
 
 
 </body>
+
+<!--
+
+ Detecto si el navegador tiene las propiedades CSS
+
+
+<script>
+
+	if(Modernizr.borderradius){
+		alert("si");
+	}else{
+		alert("no");
+	}if(Modernizr.textshadow){
+		alert("si");
+	}else{
+		alert("no");
+	}
+
+	-->
+
+</script>
+
 </html>
